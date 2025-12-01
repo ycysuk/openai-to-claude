@@ -19,7 +19,7 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
             return response
 
         # 从请求头中获取API密钥
-        token = request.headers.get("x-api-key")
+        token = request.headers.get("x-api-key") or request.headers.get("authorization", "").lstrip('Bearer ')
 
         if token != self.api_key:
             error_response = get_error_response(401, message="API密钥无效")
