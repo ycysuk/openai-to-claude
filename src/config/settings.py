@@ -78,6 +78,10 @@ class OpenAIConfig(BaseModel):
 
     api_key: str = Field(..., description="OpenAI API密钥")
     base_url: str = Field("https://api.openai.com/v1", description="OpenAI API基础URL")
+    proxy: str | None = Field(
+        None,
+        description="OpenAI HTTP(S) 代理地址，如 http://127.0.0.1:7890",
+    )
 
 
 class ServerConfig(BaseModel):
