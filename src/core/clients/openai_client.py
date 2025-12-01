@@ -27,6 +27,7 @@ class OpenAIServiceClient:
         api_key: str,
         base_url: str = "https://api.openai.com/v1",
         timeout: float = 60.0,
+        proxy: str | None = None,
     ):
         """Initialize OpenAI client with connection pool.
 
@@ -48,6 +49,7 @@ class OpenAIServiceClient:
             # 确保自动解压缩响应
             follow_redirects=True,
             timeout=timeout,
+            proxy=proxy,
         )
 
     async def __aenter__(self):
