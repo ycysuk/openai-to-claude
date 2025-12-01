@@ -37,6 +37,7 @@ class MessagesHandler:
         self.client = OpenAIServiceClient(
             api_key=config.openai.api_key,
             base_url=config.openai.base_url,
+            proxy=config.openai.proxy,
         )
 
     @classmethod
@@ -55,6 +56,7 @@ class MessagesHandler:
         instance.client = OpenAIServiceClient(
             api_key=config.openai.api_key,
             base_url=config.openai.base_url,
+            proxy=config.openai.proxy,
         )
         return instance
 

@@ -15,6 +15,7 @@ async def get_openai_client() -> OpenAIServiceClient:
     return OpenAIServiceClient(
         api_key=config.openai.api_key,
         base_url=config.openai.base_url,
+        proxy=config.openai.proxy,
     )
 
 
